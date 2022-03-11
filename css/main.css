@@ -36,12 +36,16 @@ body {
 
 .header {
   width: auto;
+  z-index: 99;
 }
 
 .header h1 {
+  position: absolute;
+  width: 100%;
   top: 0;
   text-align: center;
   margin-bottom: 20px;
+  z-index: 99;
 }
 
 #container {
@@ -56,6 +60,12 @@ a {
   padding: 0 5px;
 }
 
+a > .title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 a > .title > h2 {
   padding: inherit;
   transform: scale(1.0);
@@ -65,36 +75,53 @@ a > .title > h2 {
 
 a:hover > .title > h2 {
   transform: scale(0.95);
-  color: #333;
+  color: #555555;
+}
+
+.bgimg {
+  height: 100%;
+  white-space: nowrap;
+  text-align: center;
+  margin: 1em 0;
+  position: absolute;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .left > .bgimg > img {
-  position: absolute;
   opacity: 0.05;
-  width: 50%;
-  top: 0;
   margin-left: -300px;
+  z-index: -50;
+  max-height: 100%;
+  vertical-align: middle;
   transition: all 1.5s cubic-bezier(0, 0, 0.23, 0.99) 0s;
+  filter: blur(2px);
 }
 
 .left:hover > .bgimg > img {
   opacity: 0.2;
   transform: scale(1.05) translateX(10px);
+  filter: blur(0px);
 }
 
 .right > .bgimg > img {
-  position: absolute;
   opacity: 0.05;
-  width: 50%;
-  top: 10%;
-  margin-right: -300px;
-  z-index: -1;
+  margin-right: 300px;
+  z-index: -50;
+  max-height: 100%;
+  vertical-align: middle;
   transition: all 1.5s cubic-bezier(0, 0, 0.23, 0.99) 0s;
+  filter: blur(2px);
 }
 
 .right:hover > .bgimg > img {
   opacity: 0.9;
   transform: scale(1.05) translateX(-10px);
+  filter: blur(0.7px);
 }
 
 .flex-child {
@@ -104,7 +131,7 @@ a:hover > .title > h2 {
 .flex-child>.title {
   margin: auto;
   height: 100%;
-  transform: translateY(36%);
+  margin: auto;
   z-index: 2;
 }
 
@@ -117,6 +144,7 @@ a:hover > .title > h2 {
   width: 1px;
   margin-right: 1px;
   height: 100%;
+  margin-top: 60px;
   border-left: 1px solid #888888;
 }
 
@@ -129,7 +157,7 @@ a:hover > .title > h2 {
 
   .flex-child {
     display: block;
-    height: 43%;
+    height: 45%;
   }
 
   .center {
@@ -138,9 +166,27 @@ a:hover > .title > h2 {
     border-bottom: 1px solid white;
   }
 
+  .bgimg {
+    height: 50%;
+  }
+
+  .left > .bgimg img {
+    margin: auto;
+    margin-left: 10px;
+    opacity: 0.1;
+  }
+
   .right > .bgimg > img {
-  	height: 43vh !important;
     width: auto;
+    height: auto;
     bottom: 0;
+    position: relative;
+    top: 0;
+    margin-right: 0;
+    opacity: 0.5;
+  }
+
+  .right:hover > .bgimg > img {
+    opacity: 0.7;
   }
 }
