@@ -28,6 +28,7 @@ html {
   background-color: #010101;
   color: #999999;
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -137,6 +138,10 @@ a:hover > .title > h2 {
 
 .left {
   margin-right: 5px;
+}
+
+.right > .bgimg{
+  max-width: 100%;
 }
 
 .center {
