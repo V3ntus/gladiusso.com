@@ -153,7 +153,7 @@ a:hover > .title > h2 {
   border-left: 1px solid #888888;
 }
 
-@media all and (max-width: 700px) {
+@media all and (max-aspect-ratio: 1/1) {
   #container {
     display: block;
     width: 100%;
